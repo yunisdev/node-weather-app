@@ -19,7 +19,7 @@ hbs.registerPartials(partialsPath)
 //Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-const name = "Yunis Huseynzade"
+const name = "Yunis Hüseynzadə"
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
@@ -29,15 +29,15 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About',
+        title: 'Haqqında',
         name
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help',
-        message: 'ahahafhs',
+        title: 'Kömək',
+        message: '',
         name
     })
 })

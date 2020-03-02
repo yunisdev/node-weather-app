@@ -7,11 +7,18 @@
     <title>yunisdev &mdash; {{title}}</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/img/weather.png">
+    <style>
+        a[href="/about"] {
+            border-bottom: 2px solid #888888af;
+        }
+    </style>
 </head>
 
 <body>
     <div class="main-content">
         {{>header}}
+        <p>Bu sayt {{name}} tərəfindən hazırlanıb.
+            Məlumatlar üçün mapbox.com və darksky.net'dən istifadə olunub</p>
     </div>
     {{>footer}}
 </body>
