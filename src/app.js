@@ -49,7 +49,6 @@ app.get('/weather', (req, res) => {
         })
     }
     const { address } = req.query;
-    console.log(address)
     geoCode(address, (error, { latitude, place_name, longitude } = {}) => {
         if (error) {
             return res.send({
