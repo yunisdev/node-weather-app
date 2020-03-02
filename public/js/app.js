@@ -5,7 +5,7 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const slocation = search.value;
     document.querySelector('form button').style.animation = "buttonAnimation 1s infinite ease-out"
-    document.querySelector(`#message-1`).innerHTML = 'Loading...';
+    document.querySelector(`#message-1`).innerHTML = 'Yüklənir...';
     document.querySelector(`#message-2`).innerHTML = '';
     document.querySelector(`#message-3`).innerHTML = '';
     document.querySelector(`#message-4`).innerHTML = '';
