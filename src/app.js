@@ -43,47 +43,61 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    if(!req.query.address){
+    if (!req.query.address) {
         return res.send({
-            error:'Zəhmət olmasa məkan qeyd edin'
+            error: 'Zəhmət olmasa məkan qeyd edin'
         })
     }
-    const {address} = req.query;
-    geoCode(address, (error, {latitude,place_name,longitude}={}) => {
+    const { address } = req.query;
+    geoCode(address, (error, { latitude, place_name, longitude } = {}) => {
         if (error) {
             return res.send({
                 error
             });
         }
-        forecast(latitude, longitude, (error, {temperature,tempF,precipProbability,summary,hourlySum}) => {
+        forecast(latitude, longitude, (error, {
+            temperature,
+            tempF,
+            precipProbability,
+            summary,
+            hourlySum,
+            ozone,
+            pressure,
+            humidity,
+            windSpeed,
+        }) => {
             if (error) {
                 return res.send({
                     error
                 });
             }
             res.send({
-                location:place_name,
-                tempData:`Hal-hazırda tempuratur ${temperature} °C-dir (${tempF} °F).`,
-                precipProb:`${precipProbability}% yağıntı ehtimalı var`,
-                sum:`${summary} hava müşahidə olunur`,
+                location: place_name,
+                tempData: `Hal-hazırda tempuratur ${temperature} °C-dir (${tempF} °F).`,
+                precipProb: `${precipProbability}% yağıntı ehtimalı var`,
+                sum: summary,
                 hourlySum,
+                ozone,
+                pressure,
+                humidity,
+                windSpeed,
             })
         })
     })
 })
 
-app.get('/help/*',(req,res)=>{
-    res.render('help404',{
-        title:'404 page',
-        errMessage:'Article not found',
+app.get('/help/*', (req, res) => {
+    res.render('help404', {
+        title: '404 page',
+        errMessage: 'Article not found',
         name
     })
 })
 
-app.get('*',(req,res)=>{
-    res.render('404',{
-        title:'404 page',
-        errMessage:'Səhifə tapılmadı',
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404 page',
+        errMessage: 'Səhifə tapılmadı',
         name
     });
 })

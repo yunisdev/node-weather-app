@@ -10,20 +10,28 @@ const forecast = (latitude, longitude, callback) => {
             const {
                 timezone,
                 currently,
-                hourly
+                hourly,
             } = response.body
             const {
                 temperature,
                 precipProbability,
                 summary,
-            }=currently;
+                ozone,
+                pressure,
+                humidity,
+                windSpeed
+            } = currently;
             callback(undefined, {
                 timezone,
                 temperature,
                 tempF: Math.floor((temperature * 9 / 5 + 32) * 100) / 100,
                 precipProbability,
                 summary,
-                hourlySum: hourly.summary
+                hourlySum: hourly.summary,
+                ozone,
+                pressure,
+                humidity,
+                windSpeed,
             });
         }
     })

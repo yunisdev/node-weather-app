@@ -10,6 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
     document.querySelector(`#message-3`).innerHTML = '';
     document.querySelector(`#message-4`).innerHTML = '';
     document.querySelector(`#message-5`).innerHTML = '';
+    document.querySelector(`#message-6`).innerHTML = '';
     fetch(`/weather?address=${slocation}`).then((res) => {
         res.json().then((data) => {
 
@@ -17,12 +18,26 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 return document.querySelector(`#message-1`).innerHTML = data.error;
             } else {
-                const { location, tempData, precipProb, sum, hourlySum } = data
+                const {
+                    location,
+                    tempData,
+                    precipProb,
+                    sum,
+                    hourlySum,
+                    ozone,
+                    pressure,
+                    humidity,
+                    windSpeed,
+                } = data
                 document.querySelector(`#message-1`).innerHTML = location;
-                document.querySelector(`#message-2`).innerHTML = tempData;
-                document.querySelector(`#message-3`).innerHTML = precipProb;
-                document.querySelector(`#message-4`).innerHTML = sum;
+                document.querySelector(`#message-2`).innerHTML = sum;
+                document.querySelector(`#message-3`).innerHTML = tempData;
+                document.querySelector(`#message-4`).innerHTML = precipProb;
                 document.querySelector(`#message-5`).innerHTML = hourlySum;
+                document.querySelector(`#message-6`).innerHTML = `Ozon qatı : ${ozone} Dobson`;
+                document.querySelector(`#message-7`).innerHTML = `Teyziq : ${pressure} Pa`;
+                document.querySelector(`#message-8`).innerHTML = `Rutubet : ${humidity * 100}%`;
+                document.querySelector(`#message-9`).innerHTML = `Kuleyin ortalama sureti : ${windSpeed} m/san`
             }
         })
     })
