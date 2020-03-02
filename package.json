@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "push": "git push -u origin master;git push heroku master",
-    "test": "nodemon src/app.js -e js,css,hbs"
+    "dev": "nodemon src/app.js -e js,css,hbs"
   },
   "author": "",
   "license": "ISC",
