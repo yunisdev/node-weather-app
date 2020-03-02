@@ -75,7 +75,7 @@ app.get('/weather', (req, res) => {
             res.send({
                 location: place_name,
                 tempData: `Hal-hazırda tempuratur ${temperature} °C-dir (${tempF} °F).`,
-                precipProb: `${precipProbability}% yağıntı ehtimalı var`,
+                precipProb: `${precipProbability*100}% yağıntı ehtimalı var`,
                 sum: summary,
                 hourlySum,
                 ozone,
