@@ -52,6 +52,7 @@ input:focus{
     border-color: #888888;
 }
 button{
+    outline: none;
     cursor: pointer;
     border:1px solid #888888;
     background-color: #888888;
