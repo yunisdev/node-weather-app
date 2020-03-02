@@ -35,9 +35,9 @@ weatherForm.addEventListener('submit', (e) => {
                 document.querySelector(`#message-4`).innerHTML = precipProb;
                 document.querySelector(`#message-5`).innerHTML = hourlySum;
                 document.querySelector(`#message-6`).innerHTML = `Ozon qatı : ${ozone} Dobson`;
-                document.querySelector(`#message-7`).innerHTML = `Teyziq : ${pressure} Pa`;
-                document.querySelector(`#message-8`).innerHTML = `Rutubet : ${humidity * 100}%`;
-                document.querySelector(`#message-9`).innerHTML = `Kuleyin ortalama sureti : ${windSpeed} m/san`
+                document.querySelector(`#message-7`).innerHTML = `Təyziq : ${pressure} Pa`;
+                document.querySelector(`#message-8`).innerHTML = `Rütubət : ${humidity * 100}%`;
+                document.querySelector(`#message-9`).innerHTML = `Küləyin ortalama sürəti : ${windSpeed} m/san`
             }
         })
     })
