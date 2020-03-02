@@ -8,7 +8,7 @@ weatherForm.addEventListener('submit', (e) => {
     document.querySelector(`#message-3`).innerHTML = '';
     document.querySelector(`#message-4`).innerHTML = '';
     document.querySelector(`#message-5`).innerHTML = '';
-    fetch(`http://localhost:3000/weather?address=${slocation}`).then((res) => {
+    fetch(`/weather?address=${slocation}`).then((res) => {
         res.json().then((data) => {
             if (data.error) {
                 return document.querySelector(`#message-1`).innerHTML = data.error;
