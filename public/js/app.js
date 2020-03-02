@@ -11,6 +11,9 @@ weatherForm.addEventListener('submit', (e) => {
     document.querySelector(`#message-4`).innerHTML = '';
     document.querySelector(`#message-5`).innerHTML = '';
     document.querySelector(`#message-6`).innerHTML = '';
+    document.querySelector(`#message-7`).innerHTML = '';
+    document.querySelector(`#message-8`).innerHTML = '';
+    document.querySelector(`#message-9`).innerHTML = '';
     fetch(`/weather?address=${slocation}`).then((res) => {
         res.json().then((data) => {
 
