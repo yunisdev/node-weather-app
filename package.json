@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node src/app.js",
-    "push":"git push -u origin master;git push heroku master",
-    "test":"nodemon src/app.js -e js,css,hbs"
+    "start": "node src/app.js",
+    "push": "git push -u origin master;git push heroku master",
+    "test": "nodemon src/app.js -e js,css,hbs"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "express": "^4.16.4",
     "hbs": "^4.1.0",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.2.0"
   }
 }
